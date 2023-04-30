@@ -1,81 +1,77 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout
+  title="cowboy.dev"
+  description="hexcowboy - a fullstack and lead engineer for web3 projects"
+>
+  <h1 class="text-center font-bold">hexcowboy</h1>
+  <p class="text-center">
+    Roaming the frontier of the decentralized web.
+  </p>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+  <div>
+    <div class="flex justify-between">
+      <h2 class="font-bold">direct contact</h2>
+      <p>
+        (<a href="mailto:hex@cowboy.dev">email</a>, <a
+          href="https://discord.com/users/418557177825853443">discord</a
+        >)
+      </p>
+    </div>
+    <div class="flex justify-between">
+      <h2 class="font-bold">social</h2>
+      <p>(<a href="https://twitter.com/hexcowboy">twitter</a>)</p>
+    </div>
+    <div class="flex justify-between">
+      <h2 class="font-bold">software</h2>
+      <p>(<a href="https://github.com/hexcowboy">github</a>)</p>
+    </div>
+  </div>
+
+  <h2 class="font-bold">Skills</h2>
+  <ul>
+    <li>Typescript</li>
+    <ul>
+      <li>React</li>
+      <li>Nextjs</li>
+    </ul>
+    <li>Rust</li>
+    <li>Golang</li>
+    <li>Solidity</li>
+  </ul>
+
+  <h2 class="font-bold">Professional Teams</h2>
+  <ul>
+    <li>
+      <a href="https://www.megavoltcorp.com/">megavolt</a> - lead engineer
+    </li>
+    <li><a href="https://zerodev.app/">zerodev</a> - founding engineer</li>
+    <li><a href="https://eternal.gg/">eternal.gg</a> - lead engineer</li>
+  </ul>
+
+  <h2 class="font-bold">Projects and Contributions</h2>
+  <ul>
+    <li>
+      <a href="https://github.com/turbo-eth/template-disco-app">turbo-eth</a> (ts)
+      - disco and ceramic integrations for DID and VC gating
+    </li>
+    <li>
+      <a href="https://github.com/foundry-rs/forge-std/pull/270">forge-std</a> (sol)
+      - forge cheatcode for solidity testing
+    </li>
+    <li>
+      <a href="https://github.com/hexcowboy/rslock">rslock</a> (rs) - a rust implementation
+      of redis redlock
+    </li>
+    <li>
+      <a href="https://github.com/calcom/cal.com/pull/4019">cal.com</a> (ts) - web3
+      wallet integrations and token-gated meetings
+    </li>
+    <li>
+      <a href="https://github.com/hexcowboy/stetson">stetson</a> (rs) - a pure rust
+      pubsub server
+    </li>
+  </ul>
+</Layout>
