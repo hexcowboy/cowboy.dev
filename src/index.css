@@ -2,18 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "ElCaminoBold";
+  src: url("/elcamino-bold-webfont.woff2");
+}
+
+@font-face {
+  font-family: "ElCaminoSlim";
+  src: url("/elcamino-slim-webfont.woff2");
+}
+
+@font-face {
+  font-family: "ElCaminoRegular";
+  src: url("/elcaminoregular-webfont.woff2");
+}
+
+@font-face {
+  font-family: "ElCaminoCaps";
+  src: url("/elcamino-caps-webfont.woff2");
+}
+
 body {
   background-image: url("/noise.png");
   background-repeat: repeat;
   background-size: 200px 200px;
-  background-color: rgb(254, 254, 254);
+  background-color: #eae5e2;
   background-blend-mode: difference;
   color: #103cb7;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background-color: #103cb735;
+  color: #103cb7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "ElCaminoBold";
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: inherit;
-    color: #c94d2b;
+    background-color: #0b0b0b;
+    color: #fd5151;
+  }
+
+  ::selection {
+    background-color: #d1472135;
+    color: #fd5151;
+  }
+}
+
+@layer utilities {
+  .gradient-overlay::before,
+  .gradient-overlay::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 80px;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .gradient-overlay::before {
+    top: 0;
+    background: linear-gradient(to bottom, #eae5e2ff 40%, #eae5e200);
+  }
+
+  .gradient-overlay::after {
+    bottom: 0;
+    background: linear-gradient(to top, #eae5e2ff 40%, #eae5e200);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .gradient-overlay::before {
+      background: linear-gradient(to bottom, #0b0b0bff 40%, #0b0b0b00);
+    }
+
+    .gradient-overlay::after {
+      background: linear-gradient(to top, #0b0b0bff 40%, #0b0b0b00);
+    }
   }
 }

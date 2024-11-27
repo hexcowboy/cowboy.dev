@@ -2,49 +2,38 @@ import { CSSProperties, useEffect, useState } from "react";
 
 import { BorderSvg } from "../assets/border.svg.tsx";
 
-// Import the reusable component
-
 const borderWidth = 155.95;
 const borderHeight = 23.77;
 
-export const Border = ({
-  containerRef,
-}: {
-  containerRef: React.RefObject<HTMLDivElement>;
-}) => {
-  const [dimensions, setDimensions] = useState<{
-    width: number;
-    height: number;
-  }>({
-    width: 0,
-    height: 0,
+export const Border = () => {
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: window.innerWidth - 16,
+    height: window.innerHeight - 16,
   });
 
   useEffect(() => {
-    const updateDimensions = () => {
-      if (containerRef.current) {
-        const { offsetWidth, offsetHeight } = containerRef.current;
-        setDimensions({ width: offsetWidth, height: offsetHeight });
-      }
+    const handleResize = () => {
+      setWindowDimensions({
+        width: window.innerWidth - 16,
+        height: window.innerHeight - 16,
+      });
     };
 
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return () => window.removeEventListener("resize", updateDimensions);
-  }, [containerRef]);
+  const numImagesHorizontal = Math.ceil(windowDimensions.width / borderWidth);
+  const scaleX = windowDimensions.width / (numImagesHorizontal * borderWidth);
 
-  const numImagesHorizontal = Math.ceil(dimensions.width / borderWidth);
-  const scaleX = dimensions.width / (numImagesHorizontal * borderWidth);
-
-  const numImagesVertical = Math.ceil(dimensions.height / borderWidth);
-  const scaleY = dimensions.height / (numImagesVertical * borderWidth);
+  const numImagesVertical = Math.ceil(windowDimensions.height / borderWidth);
+  const scaleY = windowDimensions.height / (numImagesVertical * borderWidth);
 
   return (
     <>
       {/* Top Border */}
       <div
-        className="absolute left-0 top-0 flex h-[--border-height] w-full overflow-hidden"
+        className="absolute left-2 top-2 flex h-[--border-height] w-full z-50"
         style={{ "--border-height": `${borderHeight}px` } as CSSProperties}
       >
         {Array.from({ length: numImagesHorizontal }).map((_, idx) => (
@@ -60,7 +49,7 @@ export const Border = ({
 
       {/* Bottom Border */}
       <div
-        className="absolute bottom-0 left-0 flex h-[--border-height] w-full rotate-180 overflow-hidden"
+        className="absolute bottom-2 right-2 flex h-[--border-height] w-full rotate-180 z-50"
         style={{ "--border-height": `${borderHeight}px` } as CSSProperties}
       >
         {Array.from({ length: numImagesHorizontal }).map((_, idx) => (
@@ -76,7 +65,7 @@ export const Border = ({
 
       {/* Left Border */}
       <div
-        className="absolute left-0 top-0 flex h-[--border-height] w-[--border-width] origin-bottom-left rotate-90 overflow-hidden"
+        className="absolute left-2 top-2 flex h-[--border-height] w-[--border-width] origin-bottom-left rotate-90 z-50"
         style={
           {
             "--border-height": `${borderHeight}px`,
@@ -99,7 +88,7 @@ export const Border = ({
 
       {/* Right Border */}
       <div
-        className="absolute right-0 top-0 flex h-[--border-height] w-[--border-width] origin-bottom-right -rotate-90 overflow-hidden"
+        className="absolute right-2 top-2 flex h-[--border-height] w-[--border-width] origin-bottom-right -rotate-90 z-50"
         style={
           {
             "--border-height": `${borderHeight}px`,
