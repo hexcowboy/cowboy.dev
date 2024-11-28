@@ -29,13 +29,9 @@ body {
   background-color: #eae5e2;
   background-blend-mode: difference;
   color: #103cb7;
-
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }
-
-body::-webkit-scrollbar {
-  display: none;
+html {
+  overscroll-behavior: none;
 }
 
 ::selection {
@@ -63,6 +59,17 @@ h6 {
     color: #fd5151;
   }
 }
+
+.no-scrollbar {
+  scrollbar-width: none;
+} /* Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;
+} /* IE and Edge */
+.no-scrollbar::-webkit-scrollbar,
+.no-scrollbar::-webkit-scrollbar-button {
+  display: none;
+} /* Chrome */
 
 @layer utilities {
   .gradient-overlay::before,

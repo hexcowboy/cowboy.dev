@@ -1,7 +1,10 @@
 import { HeroSvg } from "../assets/hero.svg";
 import { Border } from "../components/border";
+import useDynamicFavicon from "../hooks/use-dynamic-favicon";
 
 export default function Home() {
+  useDynamicFavicon();
+
   const isSafari = () => {
     return (
       /^((?!chrome|android).)*safari/i.test(navigator.userAgent) &&
@@ -13,7 +16,9 @@ export default function Home() {
     <div className="relative h-dvh w-screen overflow-hidden">
       <Border />
 
-      <main className="gradient-overlay absolute inset-0 overflow-y-auto">
+      <main
+        className="gradient-overlay absolute inset-0 overflow-y-auto no-scrollbar"
+      >
         <div className="flex w-full flex-col items-center">
           <div className="mt-20 flex h-[60dvh] w-3/4 items-center justify-center md:w-1/2">
             <HeroSvg />
