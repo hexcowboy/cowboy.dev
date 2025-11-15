@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 @font-face {
   font-family: "ElCaminoBold";
@@ -22,6 +20,10 @@
   src: url("/elcamino-caps-webfont.woff2");
 }
 
+html {
+  overscroll-behavior: none;
+}
+
 body {
   background-image: url("/noise.png");
   background-repeat: repeat;
@@ -29,9 +31,6 @@ body {
   background-color: #eae5e2;
   background-blend-mode: difference;
   color: #103cb7;
-}
-html {
-  overscroll-behavior: none;
 }
 
 ::selection {
@@ -55,7 +54,7 @@ h6 {
   }
 
   ::selection {
-    background-color: #d1472135;
+    background-color: #fd515135;
     color: #fd5151;
   }
 }
@@ -102,4 +101,24 @@ h6 {
       background: linear-gradient(to top, #0b0b0bff 40%, #0b0b0b00);
     }
   }
+}
+
+@theme {
+  --font-camino-bold: "ElCaminoBold";
+  --font-camino-caps: "ElCaminoCaps";
+  --font-camino: "ElCaminoRegular";
+  --font-camino-slim: "ElCaminoSlim";
+}
+
+@keyframes cowboy-ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.cowboy-ticker {
+  animation: cowboy-ticker 30s linear infinite;
 }
