@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jack Novotny - Resume</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #1a1a1a;
+      padding: 0.5in 0.6in;
+      max-width: 8.5in;
+    }
+    h1 {
+      font-size: 24pt;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h2 {
+      font-size: 13pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.5px solid #1a1a1a;
+      padding-bottom: 4px;
+      margin-top: 16px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .header-info {
+      font-size: 10pt;
+      color: #444;
+      margin-bottom: 12px;
+    }
+    .header-info a {
+      color: #444;
+      text-decoration: none;
+    }
+    .header-info span {
+      margin-right: 12px;
+    }
+    .summary {
+      margin-bottom: 8px;
+    }
+    .job {
+      margin-bottom: 14px;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .job-title {
+      font-weight: 600;
+    }
+    .job-company {
+      font-weight: 600;
+    }
+    .job-company a {
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+    .job-meta {
+      font-size: 10pt;
+      color: #555;
+    }
+    .badge {
+      font-size: 9pt;
+      background: #f0f0f0;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+    .job-role {
+      font-style: italic;
+      font-size: 10.5pt;
+      color: #333;
+      margin-bottom: 4px;
+    }
+    ul {
+      margin-left: 18px;
+      margin-bottom: 6px;
+    }
+    li {
+      margin-bottom: 3px;
+    }
+    .stack {
+      font-size: 9.5pt;
+      color: #555;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 24px;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .skill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #888;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 8px;
+    }
+    .tools-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    .tools-list li {
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jack Novotny</h1>
+    <div class="header-info">
+      <span>Denver, CO / SF / NYC</span>
+      <span><a href="mailto:jack@cowboy.dev">jack@cowboy.dev</a></span>
+      <span><a href="https://github.com/hexcowboy">github.com/hexcowboy</a></span>
+    </div>
+  </header>
+
+  <section class="summary">
+    <p>Well-rounded fullstack software engineer. Helped multiple early stage startups build foundational software and interfaces. Experience as a solo founder.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <h3><span class="job-company"><a href="https://juno.fans">Juno</a></span></h3>
+        <span class="job-meta">May 2025 - Present</span>
+      </div>
+      <div class="job-role">Founder</div>
+      <ul>
+        <li>Founded and built from scratch a consumer-based social media platform for content creators as a solo founder.</li>
+        <li>Experienced founder challenges such as legal incorporation, banking, payment processing, marketing, design, and engineering.</li>
+        <li>Set up systems for reliable payment processing handling orders, chargebacks, refunds, and proper access controls.</li>
+        <li>Built low cost solutions for content uploads using cutting edge video transcription software that works in-browser.</li>
+        <li>Built an edge-native website and progressive web app with fast load times and resilient error handling.</li>
+      </ul>
+      <div class="stack"><strong>Stack:</strong> TypeScript, React 19, TanStack Router, Tailwind, Vite, Hono, Drizzle ORM, Postgres, Cloudflare</div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3><span class="job-company"><a href="https://oneleet.com">Oneleet</a></span><span class="badge">YC S2022</span></h3>
+        <span class="job-meta">February 2024 - May 2025</span>
+      </div>
+      <div class="job-role">Fifth hire, Fullstack Engineer</div>
+      <ul>
+        <li>Helped build the core platform and brand new modules for a Cybersecurity startup.</li>
+        <li>Created Trust Pages which helped customers show off their security posture to their clients.</li>
+        <li>Created multiple modules including compliance program, risk management, vendor management, and MDM device management.</li>
+        <li>Worked directly with clients to help debug and provide support where needed.</li>
+        <li>Helped Security Specialists form core software that helped shape the product.</li>
+      </ul>
+      <div class="stack"><strong>Stack:</strong> TypeScript, Vite, Tailwind, React, Postgres, Go, AWS, Cloudflare</div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <h3><span class="job-company"><a href="https://zerodev.app">ZeroDev</a></span><span class="badge">YC W2023</span></h3>
+        <span class="job-meta">September 2022 - February 2024</span>
+      </div>
+      <div class="job-role">Founding Engineer</div>
+      <ul>
+        <li>Helped build early stage efficient solutions for user-friendly crypto wallet onboarding.</li>
+        <li>Built core dashboard for customers to manage their integrations.</li>
+        <li>Wrote battle-tested, audited smart contracts which were deployed to the Ethereum mainnet.</li>
+        <li>Helped onboard new customers and provide developer documentation.</li>
+      </ul>
+      <div class="stack"><strong>Stack:</strong> Next.js, Tailwind, TypeScript, Postgres, Ethereum, Render, Supabase</div>
+    </div>
+
+    <p style="color: #555; font-style: italic; margin-top: 4px;">Previous: Multiple early stage startups, freelance web development.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-item"><span class="skill-dot"></span> Frontend development</div>
+      <div class="skill-item"><span class="skill-dot"></span> Backend development</div>
+      <div class="skill-item"><span class="skill-dot"></span> Infrastructure, Deployment, and CI/CD</div>
+      <div class="skill-item"><span class="skill-dot"></span> Integrations development</div>
+      <div class="skill-item"><span class="skill-dot"></span> Database design and optimization</div>
+      <div class="skill-item"><span class="skill-dot"></span> Engineering management and hiring</div>
+    </div>
+  </section>
+
+  <div class="two-col">
+    <section>
+      <h2>Favorite Tools</h2>
+      <ul class="tools-list">
+        <li>Neovim</li>
+        <li>Claude Code</li>
+        <li>Cursor</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>UC Berkeley Extension</strong>, 2021<br>Certificate in Cybersecurity</p>
+    </section>
+  </div>
+</body>
+</html>

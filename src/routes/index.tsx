@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 import { HeroSvg } from "../assets/hero.svg";
 import { Border } from "../components/border";
 import { Svg } from "../components/svg";
@@ -16,6 +18,13 @@ export default function Home() {
             <HeroSvg />
           </div>
 
+          <Link
+            to="/resume"
+            className="font-camino-slim text-xl transition-opacity hover:opacity-70"
+          >
+            View his resume &rarr;
+          </Link>
+
           <div className="flex w-full items-center justify-center p-8">
             <Svg
               src="/mountains.svg"
@@ -26,6 +35,7 @@ export default function Home() {
           <div className="font-camino flex flex-col items-center gap-2 px-8 py-16 text-2xl lg:flex-row lg:gap-8">
             <p className="font-camino-slim">Software Engineer</p>
             <div className="flex gap-4">
+              <Link to="/resume">Resume</Link>
               <a href="https://github.com/hexcowboy">GitHub</a>
               <a href="https://x.com/hexcowboy">Twitter</a>
             </div>
