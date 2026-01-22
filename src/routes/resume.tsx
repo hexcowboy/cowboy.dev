@@ -54,9 +54,9 @@ export default function Resume() {
           {/* Summary */}
           <section className="mb-16">
             <p className="font-camino text-xl leading-relaxed md:text-2xl">
-              Well-rounded fullstack software engineer. Helped multiple early
-              stage startups build foundational software and interfaces.
-              Experience as a solo founder.
+              Versatile fullstack engineer with a track record of building
+              foundational products at early stage startups, including
+              experience as a solo founder.
             </p>
           </section>
 
