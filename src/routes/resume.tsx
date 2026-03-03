@@ -147,6 +147,30 @@ export default function Resume() {
           {/* Divider */}
           <Divider />
 
+          {/* Certifications */}
+          <section className="mb-16">
+            <h2 className="font-camino-bold mb-8 text-3xl md:text-4xl">
+              Certifications
+            </h2>
+
+            <div className="space-y-8">
+              <CertificationItem
+                title="OSCP"
+                issuer="OffSec"
+                dates="Issued May 2021"
+                credentialId="OS-101-27388"
+              />
+              <CertificationItem
+                title="CompTIA Security+ ce Certification"
+                issuer="CompTIA"
+                dates="Issued May 2021 · Expired May 2024"
+              />
+            </div>
+          </section>
+
+          {/* Divider */}
+          <Divider />
+
           {/* Tools & Education */}
           <section className="mb-16 grid gap-12 md:grid-cols-2">
             <div>
@@ -258,6 +282,32 @@ function SkillItem({ label }: { label: string }) {
     <div className="flex items-center gap-3">
       <span className="h-2 w-2 rounded-full bg-current opacity-30" />
       <span>{label}</span>
+    </div>
+  );
+}
+
+function CertificationItem({
+  title,
+  issuer,
+  dates,
+  credentialId,
+}: {
+  title: string;
+  issuer: string;
+  dates: string;
+  credentialId?: string;
+}) {
+  return (
+    <div>
+      <h3 className="font-camino-bold mb-2 text-2xl md:text-3xl">{title}</h3>
+      <p className="font-camino-slim text-lg opacity-80">{issuer}</p>
+      <p className="font-camino-slim text-lg opacity-70">{dates}</p>
+      {credentialId && (
+        <p className="font-camino-slim text-sm opacity-60">
+          <span className="font-camino-caps tracking-wider">Credential ID:</span>{" "}
+          {credentialId}
+        </p>
+      )}
     </div>
   );
 }
