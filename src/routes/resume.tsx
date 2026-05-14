@@ -71,16 +71,16 @@ export default function Resume() {
 
             <div className="space-y-12">
               <ExperienceItem
-                title="Juno"
-                url="https://juno.fans"
+                title="Headwater"
+                url="https://headwater.club"
                 dates="May 2025 - Current"
                 role="Founder"
                 stack="TypeScript, React 19, TanStack Router, Tailwind, Vite, Hono, Drizzle ORM, Postgres, Cloudflare"
                 bullets={[
-                  "Founded and built from scratch a consumer-based social media platform for content creators as a solo founder.",
+                  "Founded and built from scratch an IRL social club app focused on helping members build meaningful offline relationships.",
+                  "Built member profiles, AI-assisted matching, and media sharing workflows to help members discover and stay connected with their club.",
                   "Experienced founder challenges such as legal incorporation, banking, payment processing, marketing, design, and engineering.",
-                  "Set up systems for reliable payment processing handling orders, chargebacks, refunds, and proper access controls.",
-                  "Built low cost solutions for content uploads using cutting edge video transcription software that works in-browser.",
+                  "Set up systems for reliable payment processing handling memberships, refunds, and proper access controls.",
                   "Built an edge-native website and progressive web app with fast load times and resilient error handling.",
                 ]}
               />
