@@ -112,13 +112,27 @@ h6 {
 
 @keyframes cowboy-ticker {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .cowboy-ticker {
-  animation: cowboy-ticker 30s linear infinite;
+  animation: cowboy-ticker 18s linear infinite;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.cowboy-ticker img,
+.cowboy-ticker object {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  flex: none;
+  user-select: none;
+  -webkit-user-drag: none;
 }
