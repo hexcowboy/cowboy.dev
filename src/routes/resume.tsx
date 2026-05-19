@@ -75,7 +75,7 @@ export default function Resume() {
                 url="https://headwater.club"
                 dates="May 2025 - Current"
                 role="Founder"
-                stack="TypeScript, React 19, TanStack Router, Tailwind, Vite, Hono, Drizzle ORM, Postgres, Cloudflare"
+                stack="TypeScript, React, TanStack Router, Tailwind, Vite, Hono, Drizzle ORM, Postgres, Cloudflare"
                 bullets={[
                   "Founded and built from scratch an IRL social club app focused on helping members build meaningful offline relationships.",
                   "Built member profiles, AI-assisted matching, and media sharing workflows to help members discover and stay connected with their club.",
@@ -106,7 +106,7 @@ export default function Resume() {
                 url="https://zerodev.app"
                 dates="September 2022 - February 2024"
                 badge="YC W2023"
-                role="Founding Engineer"
+                role="First Hire — Founding Engineer"
                 stack="Next.js, Tailwind, TypeScript, Postgres, Ethereum, Render, Supabase"
                 bullets={[
                   "Founding engineer who helped build early stage efficient solutions for user-friendly crypto wallet onboarding.",
@@ -195,6 +195,11 @@ export default function Resume() {
               </p>
             </div>
           </section>
+
+          <p className="font-camino-slim mx-auto mb-10 max-w-3xl text-center text-base opacity-70 md:text-lg">
+            Note: I followed the founder from another YC startup, Eternal (YC
+            W2020), to build the foundation of ZeroDev.
+          </p>
 
           {/* Footer decoration */}
           <div className="font-camino-caps mt-8 mb-16 flex justify-center text-center text-sm tracking-widest opacity-50">
