@@ -114,6 +114,7 @@ export default function Resume() {
                   "Wrote battle-tested, audited smart contracts which were deployed to the Ethereum mainnet.",
                   "Helped onboard new customers and provide developer documentation.",
                 ]}
+                note="Note: I followed the founder from another YC startup, Eternal (YC W2020), to build the foundation of ZeroDev."
               />
 
               <div className="font-camino-slim text-lg opacity-70">
@@ -196,11 +197,6 @@ export default function Resume() {
             </div>
           </section>
 
-          <p className="font-camino-slim mx-auto mb-10 max-w-3xl text-center text-base opacity-70 md:text-lg">
-            Note: I followed the founder from another YC startup, Eternal (YC
-            W2020), to build the foundation of ZeroDev.
-          </p>
-
           {/* Footer decoration */}
           <div className="font-camino-caps mt-8 mb-16 flex justify-center text-center text-sm tracking-widest opacity-50">
             * * *
@@ -231,6 +227,7 @@ function ExperienceItem({
   role,
   stack,
   bullets,
+  note,
 }: {
   title: string;
   url: string;
@@ -239,6 +236,7 @@ function ExperienceItem({
   role: string;
   stack: string;
   bullets: string[];
+  note?: string;
 }) {
   return (
     <div>
@@ -278,6 +276,12 @@ function ExperienceItem({
       <p className="font-camino-slim text-sm opacity-60">
         <span className="font-camino-caps tracking-wider">Stack:</span> {stack}
       </p>
+
+      {note && (
+        <p className="font-camino-slim mt-3 text-base opacity-70 md:text-lg">
+          {note}
+        </p>
+      )}
     </div>
   );
 }
@@ -309,7 +313,9 @@ function CertificationItem({
       <p className="font-camino-slim text-lg opacity-70">{dates}</p>
       {credentialId && (
         <p className="font-camino-slim text-sm opacity-60">
-          <span className="font-camino-caps tracking-wider">Credential ID:</span>{" "}
+          <span className="font-camino-caps tracking-wider">
+            Credential ID:
+          </span>{" "}
           {credentialId}
         </p>
       )}
