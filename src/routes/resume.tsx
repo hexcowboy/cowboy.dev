@@ -181,7 +181,7 @@ export default function Resume() {
               <ul className="font-camino-slim space-y-2 text-xl">
                 <li>Neovim</li>
                 <li>Claude Code</li>
-                <li>Cursor</li>
+                <li>Codex</li>
               </ul>
             </div>
 
