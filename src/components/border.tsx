@@ -1,4 +1,4 @@
-import { CSSProperties, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { BorderSvg } from "../assets/border.svg.tsx";
 
@@ -28,13 +28,17 @@ export const Border = () => {
 
   const numImagesVertical = Math.ceil(windowDimensions.height / borderWidth);
   const scaleY = windowDimensions.height / (numImagesVertical * borderWidth);
+  const verticalBorderLength = windowDimensions.height - 2 * borderHeight;
 
   return (
     <>
       {/* Top Border */}
       <div
-        className="absolute left-2 top-2 flex h-[--border-height] w-full z-50"
-        style={{ "--border-height": `${borderHeight}px` } as CSSProperties}
+        className="absolute left-2 top-2 z-50 flex"
+        style={{
+          height: `${borderHeight}px`,
+          width: `${windowDimensions.width}px`,
+        }}
       >
         {Array.from({ length: numImagesHorizontal }).map((_, idx) => (
           <BorderSvg
@@ -49,8 +53,11 @@ export const Border = () => {
 
       {/* Bottom Border */}
       <div
-        className="absolute bottom-2 right-2 flex h-[--border-height] w-full rotate-180 z-50"
-        style={{ "--border-height": `${borderHeight}px` } as CSSProperties}
+        className="absolute right-2 bottom-2 z-50 flex rotate-180"
+        style={{
+          height: `${borderHeight}px`,
+          width: `${windowDimensions.width}px`,
+        }}
       >
         {Array.from({ length: numImagesHorizontal }).map((_, idx) => (
           <BorderSvg
@@ -65,15 +72,11 @@ export const Border = () => {
 
       {/* Left Border */}
       <div
-        className="absolute left-2 top-2 flex h-[--border-height] w-[--border-width] origin-bottom-left rotate-90 z-50"
-        style={
-          {
-            "--border-height": `${borderHeight}px`,
-            "--border-width": `${
-              numImagesVertical * borderWidth * scaleY - 2 * borderHeight
-            }px`,
-          } as CSSProperties
-        }
+        className="absolute left-2 top-2 z-50 flex origin-bottom-left rotate-90"
+        style={{
+          height: `${borderHeight}px`,
+          width: `${verticalBorderLength}px`,
+        }}
       >
         {Array.from({ length: numImagesVertical }).map((_, idx) => (
           <BorderSvg
@@ -88,15 +91,11 @@ export const Border = () => {
 
       {/* Right Border */}
       <div
-        className="absolute right-2 top-2 flex h-[--border-height] w-[--border-width] origin-bottom-right -rotate-90 z-50"
-        style={
-          {
-            "--border-height": `${borderHeight}px`,
-            "--border-width": `${
-              numImagesVertical * borderWidth * scaleY - 2 * borderHeight
-            }px`,
-          } as CSSProperties
-        }
+        className="absolute top-2 right-2 z-50 flex origin-bottom-right -rotate-90"
+        style={{
+          height: `${borderHeight}px`,
+          width: `${verticalBorderLength}px`,
+        }}
       >
         {Array.from({ length: numImagesVertical }).map((_, idx) => (
           <BorderSvg
