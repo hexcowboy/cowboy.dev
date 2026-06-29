@@ -55,6 +55,8 @@
     }
     .job {
       margin-bottom: 14px;
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
     .job-header {
       display: flex;
@@ -88,6 +90,12 @@
       font-size: 10.5pt;
       color: #333;
       margin-bottom: 4px;
+    }
+    .job-subtitle {
+      font-size: 10pt;
+      color: #555;
+      margin-top: -1px;
+      margin-bottom: 3px;
     }
     ul {
       margin-left: 18px;
@@ -128,12 +136,6 @@
     }
     .tools-list li {
       margin-bottom: 2px;
-    }
-    .note {
-      color: #555;
-      font-size: 9.5pt;
-      font-style: italic;
-      margin-top: 4px;
     }
   </style>
 </head>
@@ -192,7 +194,8 @@
         <h3><span class="job-company"><a href="https://zerodev.app">ZeroDev</a></span><span class="badge">YC W2023</span></h3>
         <span class="job-meta">September 2022 - February 2024</span>
       </div>
-      <div class="job-role">First Hire — Founding Engineer</div>
+      <div class="job-subtitle">transitioned from Eternal (YC W2020)</div>
+      <div class="job-role">Founding Engineer and Engineering Manager</div>
       <ul>
         <li>Helped build early stage efficient solutions for user-friendly crypto wallet onboarding.</li>
         <li>Built core dashboard for customers to manage their integrations.</li>
@@ -200,7 +203,6 @@
         <li>Helped onboard new customers and provide developer documentation.</li>
       </ul>
       <div class="stack"><strong>Stack:</strong> Next.js, Tailwind, TypeScript, Postgres, Ethereum, Render, Supabase</div>
-      <p class="note">Note: I followed the founder from another YC startup, Eternal (YC W2020), to build the foundation of ZeroDev.</p>
     </div>
 
     <p style="color: #555; font-style: italic; margin-top: 4px;">Previous: Multiple early stage startups, freelance web development.</p>

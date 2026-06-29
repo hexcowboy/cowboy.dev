@@ -11,19 +11,19 @@ export default function Resume() {
       <Border />
 
       <main className="gradient-overlay no-scrollbar absolute inset-0 overflow-y-auto">
-        <div className="mx-auto flex w-full max-w-4xl flex-col px-6 py-24 md:px-12">
+        <div className="relative z-[60] mx-auto flex w-full max-w-4xl flex-col px-10 py-24 sm:px-12">
           {/* Navigation */}
           <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
             <Link
               to="/"
-              className="font-camino-slim text-lg opacity-70 transition-opacity hover:opacity-100"
+              className="font-camino-slim text-base opacity-70 transition-opacity hover:opacity-100 sm:text-lg"
             >
               &larr; Back home
             </Link>
             <a
               href="/jack-novotny-resume.pdf"
               download
-              className="font-camino-slim text-lg opacity-70 transition-opacity hover:opacity-100"
+              className="font-camino-slim text-base opacity-70 transition-opacity hover:opacity-100 sm:text-lg"
             >
               Download PDF version &darr;
             </a>
@@ -31,10 +31,10 @@ export default function Resume() {
 
           {/* Header */}
           <header className="mb-16">
-            <h1 className="font-camino-bold mb-4 text-5xl md:text-7xl">
+            <h1 className="font-camino-bold mb-4 max-w-full break-words text-3xl leading-none sm:text-5xl md:text-6xl">
               Jack Novotny
             </h1>
-            <div className="font-camino-slim flex flex-col gap-2 text-xl md:flex-row md:gap-6">
+            <div className="font-camino-slim flex max-w-full flex-col gap-2 text-lg break-words sm:text-xl md:flex-row md:flex-wrap md:gap-x-6 md:gap-y-2">
               <span>Denver, CO / SF / NYC</span>
               <a
                 href="mailto:jack@cowboy.dev"
@@ -53,7 +53,7 @@ export default function Resume() {
 
           {/* Summary */}
           <section className="mb-16">
-            <p className="font-camino text-xl leading-relaxed md:text-2xl">
+            <p className="font-camino text-lg leading-relaxed sm:text-xl md:text-2xl">
               Versatile fullstack engineer with a track record of building
               foundational products at early stage startups, including
               experience as a solo founder.
@@ -106,7 +106,8 @@ export default function Resume() {
                 url="https://zerodev.app"
                 dates="September 2022 - February 2024"
                 badge="YC W2023"
-                role="First Hire — Founding Engineer"
+                subtitle="transitioned from Eternal (YC W2020)"
+                role="Founding Engineer and Engineering Manager"
                 stack="Next.js, Tailwind, TypeScript, Postgres, Ethereum, Render, Supabase"
                 bullets={[
                   "Founding engineer who helped build early stage efficient solutions for user-friendly crypto wallet onboarding.",
@@ -114,7 +115,6 @@ export default function Resume() {
                   "Wrote battle-tested, audited smart contracts which were deployed to the Ethereum mainnet.",
                   "Helped onboard new customers and provide developer documentation.",
                 ]}
-                note="Note: I followed the founder from another YC startup, Eternal (YC W2020), to build the foundation of ZeroDev."
               />
 
               <div className="font-camino-slim text-lg opacity-70">
@@ -224,19 +224,19 @@ function ExperienceItem({
   url,
   dates,
   badge,
+  subtitle,
   role,
   stack,
   bullets,
-  note,
 }: {
   title: string;
   url: string;
   dates: string;
   badge?: string;
+  subtitle?: string;
   role: string;
   stack: string;
   bullets: string[];
-  note?: string;
 }) {
   return (
     <div>
@@ -258,6 +258,12 @@ function ExperienceItem({
         )}
       </div>
 
+      {subtitle && (
+        <p className="font-camino-slim -mt-2 mb-4 text-base opacity-70 md:text-lg">
+          {subtitle}
+        </p>
+      )}
+
       <div className="font-camino-slim mb-4 flex flex-col gap-1 text-lg opacity-80 md:flex-row md:gap-4">
         <span>{role}</span>
         <span className="hidden md:inline">&middot;</span>
@@ -276,12 +282,6 @@ function ExperienceItem({
       <p className="font-camino-slim text-sm opacity-60">
         <span className="font-camino-caps tracking-wider">Stack:</span> {stack}
       </p>
-
-      {note && (
-        <p className="font-camino-slim mt-3 text-base opacity-70 md:text-lg">
-          {note}
-        </p>
-      )}
     </div>
   );
 }
